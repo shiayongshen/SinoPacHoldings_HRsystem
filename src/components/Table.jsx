@@ -1,9 +1,13 @@
+// Table.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const MyForm = () => {
+const Table = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [responseMessage, setResponseMessage] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +24,8 @@ const MyForm = () => {
       .then(data => {
         setResponseMessage(data.message || '資料送出成功！');
         console.log('Success:', data);
+        // 成功送出後導向 Evaluation 頁面
+        navigate('/evaluation');
       })
       .catch((error) => {
         setResponseMessage('發生錯誤');
@@ -56,4 +62,4 @@ const MyForm = () => {
   );
 };
 
-export default MyForm;
+export default Table;

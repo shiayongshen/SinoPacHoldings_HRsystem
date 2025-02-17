@@ -1,0 +1,4 @@
+git commit -m "rederict to form"          
+git branch -M main                     
+git remote add origin https://github.com/shiayongshen/SinoPacHoldings_HRsystem.git
+git push -u origin main
